@@ -9,6 +9,22 @@
 
 </head>
 <body>
-    <h1>My App</h1>
+    <div id="root"></div> 
+    <!-- // the entry point for our React app / user interface -->
+    <script>
+        // const root = ReactDOM.createRoot(document.getElementById('root'));
+        // root.render(
+        //     React.createElement('h1', null, 'Hello, React!')
+        // );
+        function App() {
+            return React.createElement('h1', null, 'Hello, React!');
+        } // this happens under the hood when we write JSX, it gets transpiled to React.createElement calls. So we can write our components using plain JavaScript without JSX if we want to.
+        const container = document.getElementById('root');
+        const root = ReactDOM.createRoot(container);
+        root.render(React.createElement(App));
+    </script>
 </body>
 </html>
+
+<!-- // this index.html is a single page application (SPA) that serves as the entry point for our React app. It includes the necessary scripts to load React and ReactDOM, and it renders a simple "Hello, React!" message to the DOM.
+// everything will be loaded inside that div with id 'root'. This is where our React components will be rendered. The script at the bottom creates a root for our React application and renders a simple heading element to the page. -->
