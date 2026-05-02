@@ -11,14 +11,44 @@
 <body>
     <div id="root"></div> 
     <!-- // the entry point for our React app / user interface -->
-    <script>
+    <script type="babel">
         // const root = ReactDOM.createRoot(document.getElementById('root'));
         // root.render(
         //     React.createElement('h1', null, 'Hello, React!')
         // );
+        function Header() {
+            <header>
+                <h2>My React App</h2>
+            </header>
+        }
         function App() {
-            return React.createElement('h1', null, 'Hello, React!');
-        } // this happens under the hood when we write JSX, it gets transpiled to React.createElement calls. So we can write our components using plain JavaScript without JSX if we want to.
+            const name = 'React';
+            const member = true;
+            <!-- return (
+                <react.Fragment>
+                    <Header />
+                    <p>This is a simple {name} app.</p>
+                    member: {member ? 'Yes' : 'No'}
+                    {/* // we can also use conditional rendering to display different content based on the value of a variable. In this case, we are using a ternary operator to check if the member variable is true or false, and displaying "Yes" or "No" accordingly. */}
+                    // making it dynamic by using a JavaScript variable inside the JSX. We can use curly braces {} to embed JavaScript expressions within our JSX code. In this case, we are embedding the name variable, which contains the string 'React', into the paragraph element. When this component is rendered, it will display "This is a simple React app."
+                </react.Fragment>   
+            ) -->
+
+            return 
+                <react.Fragment>
+                    <title>My React App</title>
+                        <Header />
+                        <p>This is a simple {name} app.</p>
+                        member: {member ? 'Yes' : 'No'}
+
+            <!-- if member {
+                return <p>Welcome, member!</p>;
+            } else {
+                return <p>Please sign up to become a member.</p>;
+            }
+        } 
+         -->
+        // this happens under the hood when we write JSX, it gets transpiled to React.createElement calls. So we can write our components using plain JavaScript without JSX if we want to.
         const container = document.getElementById('root');
         const root = ReactDOM.createRoot(container);
         root.render(React.createElement(App));
